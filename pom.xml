@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.josdugan</groupId>
 	<artifactId>beer-works-bom</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>beer-works-bom</name>
 	<description>Demo project for Spring Boot</description>
@@ -21,6 +21,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<jaxb.version>2.3.0</jaxb.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
+		<beer-works-common.version>0.0.1-SNAPSHOT</beer-works-common.version>
 	</properties>
 
 	<dependencyManagement>
@@ -44,6 +45,11 @@
 				<groupId>org.mapstruct</groupId>
 				<artifactId>mapstruct</artifactId>
 				<version>${mapstruct.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.josdugan</groupId>
+				<artifactId>beer-works-common</artifactId>
+				<version>${beer-works-common.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -79,6 +85,10 @@
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.josdugan</groupId>
+			<artifactId>beer-works-common</artifactId>
 		</dependency>
 
 		<dependency>
@@ -182,6 +192,16 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/josdugan/beer-works-common</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<distributionManagement>
 		<repository>
