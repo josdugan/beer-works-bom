@@ -187,16 +187,6 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>github</id>
-			<url>https://maven.pkg.github.com/josdugan/beer-works-common</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
 	<distributionManagement>
 		<repository>
 			<id>github</id>
