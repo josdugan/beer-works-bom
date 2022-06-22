@@ -16,7 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<beer-works-common.version>0.0.4-SNAPSHOT</beer-works-common.version>
+		<beer-works-common.version>0.0.5-SNAPSHOT</beer-works-common.version>
 	</properties>
 
 	<dependencyManagement>
