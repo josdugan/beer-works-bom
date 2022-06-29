@@ -5,18 +5,18 @@
 	<parent>
 		<groupId>com.josdugan</groupId>
 		<artifactId>beer-works-dependencies</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.josdugan</groupId>
 	<artifactId>beer-works-bom</artifactId>
-	<version>0.0.9-SNAPSHOT</version>
+	<version>0.0.10-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>beer-works-bom</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<beer-works-common.version>0.0.8-SNAPSHOT</beer-works-common.version>
+		<beer-works-common.version>0.0.9-SNAPSHOT</beer-works-common.version>
 	</properties>
 
 	<dependencyManagement>
@@ -73,6 +73,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.JensPiegsa</groupId>
+			<artifactId>wiremock-extension</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>artemis-jms-server</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -141,6 +156,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>${maven-failsafe-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -183,6 +206,10 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 
